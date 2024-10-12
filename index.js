@@ -16,8 +16,18 @@ logged.innerHTML = isLoggedIn ? `Welcome Back ${localStorage.getItem('user')}` :
 
 
 //Buying buttons
+let cart = []
 const p5 = document.getElementById('p5')
 
 p5.addEventListener('click', () => {
-    alert('P5 has been added to your shopping cart!')
+    cart.push({name:'Persona 5', price:'60'});
+    localStorage.setItem('cart', cart)
+    console.log(cart)
+    alert('P5 has been added to your shopping cart!');
+})
+
+const clear = document.getElementById('clear')
+
+clear.addEventListener('click', () => {
+    localStorage.clear();
 })
