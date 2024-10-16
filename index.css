@@ -4,5 +4,12 @@
 
 
 body {
-    background-color:rgb(0, 9, 103);
+    /* background-color:rgb(0, 9, 103); */
+    background-image: url('./images/games.png');
+    background-repeat: repeat;
 }
+
+#restricted {
+    display: none;
+}
+

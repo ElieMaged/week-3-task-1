@@ -6,7 +6,13 @@ if(localStorage.getItem('user')) {
     isLoggedIn = false
 }
 
-
+if(isLoggedIn) {
+    document.getElementById("restricted-content").style.display = "block";
+    document.getElementById("login-prompt").style.display = "none";
+} else {
+    document.getElementById("restricted-content").style.display = "none";
+    document.getElementById("login-prompt").style.display = "block";
+}
 
 //islogged logic
 // let isLoggedIn = true;
@@ -14,15 +20,19 @@ if(localStorage.getItem('user')) {
 //navbar login text
 logged.innerHTML = isLoggedIn ? `Welcome Back ${localStorage.getItem('user')}` : 'Sign up';
 
+if(isLoggedIn) {
+    let buttons = document.getElementById('restricted')
+buttons.style.display = 'block'
+}
 
 
 //Buying buttons and logic
-let cart = []
+let cart = 0;
 //Persona 5 buy button
 const p5 = document.getElementById('p5')
 
 p5.addEventListener('click', () => {
-    cart.push({name:'Persona 5', price:'60'});
+    cart += 60;
     console.log(cart);
     localStorage.setItem('cart', cart)
     alert('Persona 5 has been added to your shopping cart!');
@@ -34,7 +44,7 @@ p5.addEventListener('click', () => {
 const p4 = document.getElementById('p4');
 
 p4.addEventListener('click', () => {
-    cart.push({name:'Persona 4', price:'40'});
+    cart += 40;
     console.log(cart);
     localStorage.setItem('cart', cart)
     alert('Persona 4 has been added to your shopping cart!');

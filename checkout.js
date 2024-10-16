@@ -15,9 +15,14 @@ if(localStorage.getItem('user')) {
 logged.innerHTML = isLoggedIn ? `Welcome Back ${localStorage.getItem('user')}` : 'Sign up';
 
 
-const ol = document.getElementById('cart')
 
-ol.append('hiiiii')
 
-const cart = localStorage.getItem('cart')
+const ol = document.getElementById('list')
+const li = document.createElement('li')
+
+let total = localStorage.getItem('cart')
+li.innerHTML = total
+ol.append(`${total} US Dollars`)
+
+
 
